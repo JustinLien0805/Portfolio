@@ -4,7 +4,7 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="flex flex-col h-[50vh] relative space-y-8 my-10">
+    <div className="flex flex-col justify-center h-[80vh] relative space-y-8 my-10">
       <h2
         className="text-5xl font-semibold border-l-4 border-primary pl-4"
         ref={ref}

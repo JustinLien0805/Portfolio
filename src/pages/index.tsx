@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Hero section */}
-      <div className="min-h-screen max-w-7xl w-screen overflow-x-hidden px-4 md:px-40">
+      <div className="min-h-screen w-screen px-4 md:px-64">
         <Hero />
 
         {/* About section */}
@@ -21,7 +21,7 @@ export default function Home() {
 
         {/* Skill section */}
         <Skill />
-        
+
         {/* Project section */}
 
         {/* Contact section */}
