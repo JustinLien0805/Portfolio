@@ -1,8 +1,7 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
-import Skill from "@/components/Skill";
 import Head from "next/head";
-
+import Project from "@/components/Project";
 export default function Home() {
   return (
     <>
@@ -13,17 +12,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Hero section */}
-      <div className="min-h-screen w-screen px-4 md:px-64">
+      <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-36 overflow-hidden">
         <Hero />
 
         {/* About section */}
         <About />
 
-        {/* Skill section */}
-        <Skill />
-
         {/* Project section */}
-
+        <Project />
         {/* Contact section */}
       </div>
     </>
