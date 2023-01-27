@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Hero from "@/components/Hero";
 import Head from "next/head";
 import Project from "@/components/Project";
+import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <>
@@ -11,16 +12,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* Hero section */}
-      <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-36 overflow-hidden">
+
+      <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 xl:px-[25%] overflow-hidden">
         <Hero />
 
-        {/* About section */}
-        <About />
+        {/* <About /> */}
 
         {/* Project section */}
         <Project />
         {/* Contact section */}
+        {/* <Contact /> */}
       </div>
     </>
   );

@@ -4,7 +4,7 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="flex flex-col h-[50vh] relative space-y-8 my-10 xl:w-[50vw]">
+    <div className="flex flex-col h-[100vh] relative space-y-8 my-10 xl:w-[50vw]">
       <h2
         className="text-5xl font-semibold border-l-4 border-primary pl-4"
         ref={ref}
@@ -26,12 +26,9 @@ const About = () => {
         }}
       >
         Hi, I'm Justin. I'm a passionate web developer based in Taipei, Taiwan.
-        Currently, I am studying at National Cheng-Chi University. I specialize
-        in frontend & backend web development but also have an interest in
-        design and database development. I am always striving to build new
-        things and looking for new opportunities to learn and grow. I love
-        experimenting with new technologies and collaborating with like-minded
-        individuals to improve and expand my skillset.
+        I specialize in frontend & backend web development but also have an
+        interest in design and database development. I am always striving to
+        build new things and looking for new opportunities to learn and grow.
       </p>
     </div>
   );
