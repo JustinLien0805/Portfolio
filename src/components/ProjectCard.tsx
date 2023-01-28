@@ -45,6 +45,7 @@ const ProjectCard = ({
     >
       <a
         className="flex w-full cursor-pointer hover:scale-105"
+        rel="noreferrer"
         ref={ref}
         href={websiteUrl}
         target="_blank"
@@ -77,13 +78,15 @@ const ProjectCard = ({
         >
           ProjectName
         </h2>
-        <p className="text-lg"
-        ref={textRef}
-        style={{
-          transform: isInView ? "none" : "translatex(100px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
-        }}>
+        <p
+          className="text-lg"
+          ref={textRef}
+          style={{
+            transform: isInView ? "none" : "translatex(100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+          }}
+        >
           Our website allows users to easily upload their YouTube watch history
           and receive a detailed yearly report on their viewing habits. With a
           user-friendly interface, you can easily track your favorite channels,
