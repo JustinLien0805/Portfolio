@@ -22,7 +22,7 @@ export default function Home() {
       <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[25%] overflow-hidden">
         <motion.div
           style={{ scaleX }}
-          className="fixed h-1 left-0 right-0 bottom-12 bg-primary z-50"
+          className="fixed h-1 left-0 right-0 bottom-10 bg-primary z-50"
         />
         <Hero />
 

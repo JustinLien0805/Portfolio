@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <div
-        className="flex flex-col text-6xl text-left font-black italic mb-10"
+        className="flex flex-col text-6xl sm:text-left text-right font-black italic mb-10"
         ref={ref}
         style={{
           transform: isInView ? "none" : "translatex(-100px)",
@@ -14,13 +14,13 @@ const About = () => {
           transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        <h2 className="font-outline2 pl-1">ABOUT ME</h2>
-        <h2 className="pr-1">ABOUT ME</h2>
-        <h2 className="font-outline2 pl-1">ABOUT ME</h2>
+        <h2 className="font-outline2 pr-1 sm:pl-1">ABOUT ME</h2>
+        <h2 className="pr-1 sm:pr-1">ABOUT ME</h2>
+        <h2 className="font-outline2 pr-1 sm:pl-1">ABOUT ME</h2>
       </div>
       <div className="flex flex-col w-full relative space-y-8 my-10">
         <p
-          className="md:text-3xl text-xl font-semibold text-left sm:w-3/4 w-4/5"
+          className="md:text-3xl text-xl font-semibold text-left sm:w-4/5 w-full"
           ref={ref}
           style={{
             transform: isInView ? "none" : "translatex(-100px)",

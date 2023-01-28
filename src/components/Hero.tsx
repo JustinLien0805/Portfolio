@@ -9,7 +9,7 @@ const Hero = () => {
     >
       <h1 className="text-6xl">Hello.</h1>
       <h1 className="md:py-2">
-        I'm <span className="text-primary">Justin</span>
+        I'm <span className="text-primary">Justin Lien</span>
       </h1>
       <h2 className="text-6xl">
         A{" "}

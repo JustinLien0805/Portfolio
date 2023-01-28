@@ -7,7 +7,7 @@ const Project = () => {
   return (
     <>
       <div
-        className="flex flex-col text-6xl text-right font-black italic mt-10"
+        className="flex flex-col text-6xl text-right font-black italic my-10 md:-mb-20"
         ref={ref}
         style={{
           transform: isInView ? "none" : "translatex(100px)",

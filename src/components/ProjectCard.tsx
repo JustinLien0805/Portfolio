@@ -1,6 +1,12 @@
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  MotionValue,
+  useInView,
+} from "framer-motion";
 import p1 from "../../public/p1.png";
 import p2 from "../../public/p2.png";
 import p3 from "../../public/p3.png";
@@ -25,15 +31,20 @@ const ProjectCard = ({
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
+
+  const textRef = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <div
-      className={`flex flex-col w-full justify-center sm:h-[100vh] h-[70vh] ${
-        position === "left" ? "items-start" : "items-end"
+      className={`flex flex-col w-full justify-start min-h-screen sm:items-center gap-4 ${
+        position === "left"
+          ? "md:flex-row items-start"
+          : "md:flex-row-reverse items-start"
       }
       font-bold text-6xl relative`}
     >
       <a
-        className="flex w-[20rem] sm:w-[35rem] lg:w-[40rem] cursor-pointer hover:scale-105"
+        className="flex w-full cursor-pointer hover:scale-105"
         ref={ref}
         href={websiteUrl}
         target="_blank"
@@ -48,47 +59,38 @@ const ProjectCard = ({
         style={{ y }}
         className={`absolute ${
           position === "left"
-            ? "sm:left-[calc(50%+180px)] left-[calc(50%+50px)]"
-            : "sm:right-[calc(50%+180px)] right-[calc(50%+50px)]"
-        } italic text-secondary font-black text-5xl sm:text-6xl`}
+            ? "md:-left-10 left-[calc(50%+50px)]"
+            : "md:-right-10 text-right left-[calc(50%+50px)]"
+        } italic text-primary font-black text-5xl sm:text-6xl`}
       >
         {number}
       </motion.h2>
-      {/* <h2 className="font-semibold border-l-4 border-primary pl-4">
-        ProjectName
-      </h2>
-
-      <p className="text-xl md:w-1/2">
-        Our website allows users to easily upload their YouTube watch history
-        and receive a detailed yearly report on their viewing habits. With a
-        user-friendly interface, you can easily track your favorite channels,
-        discover new content, and gain insights into how you spend your time on
-        YouTube over the past year.
-      </p> */}
-
-      {/* <div className="carousel rounded-box h-64 md:hidden">
-        <div className="carousel-item w-[100%]">
-          <Image
-            src={p1}
-            alt="ProjectImage"
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="carousel-item w-full">
-          <Image
-            src={p1}
-            alt="ProjectImage"
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="carousel-item w-full">
-          <Image
-            src={p1}
-            alt="ProjectImage"
-            className="object-cover object-center"
-          />
-        </div>
-      </div> */}
+      <div className="flex flex-col w-full sm:flex-grow gap-4">
+        <h2
+          className="font-semibold text-5xl border-l-4 border-secondary pl-4"
+          ref={textRef}
+          style={{
+            transform: isInView ? "none" : "translatex(100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          }}
+        >
+          ProjectName
+        </h2>
+        <p className="text-lg"
+        ref={textRef}
+        style={{
+          transform: isInView ? "none" : "translatex(100px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+        }}>
+          Our website allows users to easily upload their YouTube watch history
+          and receive a detailed yearly report on their viewing habits. With a
+          user-friendly interface, you can easily track your favorite channels,
+          discover new content, and gain insights into how you spend your time
+          on YouTube over the past year.
+        </p>
+      </div>
     </div>
   );
 };
