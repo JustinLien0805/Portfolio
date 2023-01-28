@@ -20,7 +20,7 @@ const About = () => {
       </div>
       <div className="flex flex-col w-full relative space-y-8 my-10">
         <p
-          className="text-3xl font-semibold text-left w-3/4"
+          className="md:text-3xl text-xl font-semibold text-left sm:w-3/4 w-4/5"
           ref={ref}
           style={{
             transform: isInView ? "none" : "translatex(-100px)",

@@ -14,36 +14,43 @@ function useParallax(value: MotionValue<number>, distance: number) {
 type PrjectCardProps = {
   position: string;
   number: string;
+  websiteUrl: string;
 };
 
-const ProjectCard = ({ position = "left", number }: PrjectCardProps) => {
+const ProjectCard = ({
+  position = "left",
+  number,
+  websiteUrl,
+}: PrjectCardProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 200);
+  const y = useParallax(scrollYProgress, 300);
   return (
     <div
-      className={`flex flex-col w-full justify-center min-h-[100vh] ${
+      className={`flex flex-col w-full justify-center sm:h-[100vh] h-[70vh] ${
         position === "left" ? "items-start" : "items-end"
       }
       font-bold text-6xl relative`}
     >
-      <div
-        className="flex w-[25rem] lg:w-[40rem] cursor-pointer hover:scale-105"
+      <a
+        className="flex w-[20rem] sm:w-[35rem] lg:w-[40rem] cursor-pointer hover:scale-105"
         ref={ref}
+        href={websiteUrl}
+        target="_blank"
       >
         <Image
           src={p1}
           alt="ProjectImage"
           className="rounded-lg aspect-video object-cover"
         />
-      </div>
+      </a>
       <motion.h2
         style={{ y }}
         className={`absolute ${
           position === "left"
             ? "sm:left-[calc(50%+180px)] left-[calc(50%+50px)]"
             : "sm:right-[calc(50%+180px)] right-[calc(50%+50px)]"
-        } italic text-secondary font-black`}
+        } italic text-secondary font-black text-5xl sm:text-6xl`}
       >
         {number}
       </motion.h2>

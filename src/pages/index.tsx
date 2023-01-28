@@ -3,7 +3,14 @@ import Hero from "@/components/Hero";
 import Head from "next/head";
 import Project from "@/components/Project";
 import Contact from "@/components/Contact";
+import { useScroll, useSpring, motion } from "framer-motion";
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
   return (
     <>
       <Head>
@@ -13,6 +20,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[25%] overflow-hidden">
+        <motion.div
+          style={{ scaleX }}
+          className="fixed h-1 left-0 right-0 bottom-12 bg-primary z-50"
+        />
         <Hero />
 
         {/* Project section */}
