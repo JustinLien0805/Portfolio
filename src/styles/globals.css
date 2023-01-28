@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.font-outline {
+  font-size: 4rem;
+  -webkit-text-stroke: 2px #a855f7;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}
+
+.font-outline2 {
+  font-size: 4rem;
+  -webkit-text-stroke: 2px #82f2e7;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}

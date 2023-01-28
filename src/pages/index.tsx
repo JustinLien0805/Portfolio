@@ -12,14 +12,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 xl:px-[25%] overflow-hidden">
+      <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[25%] overflow-hidden">
         <Hero />
-
-        {/* <About /> */}
 
         {/* Project section */}
         <Project />
+        <About />
         {/* Contact section */}
         {/* <Contact /> */}
       </div>
