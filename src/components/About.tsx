@@ -13,7 +13,7 @@ const About = ({ scrollRef }: aboutProps) => {
         style={{
           transform: isInView ? "none" : "translatex(-100px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
         }}
       >
         <h2 className="font-outline2 pr-1 md:pl-1">ABOUT ME</h2>
@@ -27,7 +27,7 @@ const About = ({ scrollRef }: aboutProps) => {
         style={{
           transform: isInView ? "none" : "translatex(-100px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+          transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
         }}
       >
         <span className="w-full text-3xl font-bold md:text-4xl">

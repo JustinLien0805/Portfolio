@@ -14,7 +14,7 @@ const Project = ({ scrollRef }: projectProps) => {
         style={{
           transform: isInView ? "none" : "translatex(100px)",
           opacity: isInView ? 1 : 0,
-          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
         }}
       >
         <h2 className="font-outline pr-1">PROJECT</h2>
