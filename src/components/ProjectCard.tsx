@@ -89,7 +89,15 @@ const ProjectCard = ({
         >
           {projectTitle}
         </h2>
-        <div className="grid grid-flow-row sm:grid-cols-3 grid-cols-2 gap-2">
+        <div
+          className="grid grid-flow-row sm:grid-cols-3 grid-cols-2 gap-2"
+          ref={textRef}
+          style={{
+            transform: isInView ? "none" : "translatex(100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.333s",
+          }}
+        >
           {tools.map((tool, index) => (
             <div
               key={index}
@@ -105,12 +113,20 @@ const ProjectCard = ({
           style={{
             transform: isInView ? "none" : "translatex(100px)",
             opacity: isInView ? 1 : 0,
-            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.366s",
           }}
         >
           {description}
         </p>
-        <div className="flex space-x-2">
+        <div
+          className="flex space-x-2"
+          ref={textRef}
+          style={{
+            transform: isInView ? "none" : "translatex(100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+          }}
+        >
           {websiteUrl && (
             <button className="flex-1 btn btn-secondary">
               <a href={websiteUrl} target="_blank" rel="noreferrer">

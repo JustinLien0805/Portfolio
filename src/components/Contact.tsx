@@ -23,7 +23,15 @@ const Contact = () => {
         <h2 className="pr-1">CONTACT</h2>
         <h2 className="font-outline pr-1">CONTACT</h2>
       </div>
-      <div className="flex flex-col w-full text-left text-6xl space-y-4">
+      <div
+        className="flex flex-col  text-left text-6xl space-y-4"
+        ref={ref}
+        style={{
+          transform: isInView ? "none" : "translatex(100px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+        }}
+      >
         <h2 className="font-bold">Let&apos;s Talk!</h2>
         <a
           href="https://github.com/JustinLien0805"
