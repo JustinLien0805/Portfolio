@@ -24,7 +24,7 @@ const Contact = () => {
         <h2 className="font-outline pr-1">CONTACT</h2>
       </div>
       <div className="flex flex-col w-full text-left text-6xl space-y-4">
-        <h2 className="font-bold">Let's Talk!</h2>
+        <h2 className="font-bold">Let&apos;s Talk!</h2>
         <a
           href="https://github.com/JustinLien0805"
           target="_blank"
