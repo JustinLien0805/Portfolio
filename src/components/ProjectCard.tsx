@@ -12,6 +12,7 @@ import p2 from "../../public/p2.png";
 import p3 from "../../public/p3.png";
 import p4 from "../../public/p4.png";
 import p5 from "../../public/p5.png";
+import { useEffect } from "react";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -29,11 +30,13 @@ const ProjectCard = ({
   websiteUrl,
 }: PrjectCardProps) => {
   const ref = useRef(null);
+
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
 
   const textRef = useRef(null);
   const isInView = useInView(ref, { once: true });
+ 
   return (
     <div
       className={`flex flex-col w-full justify-start min-h-screen sm:items-center gap-4 ${
@@ -78,6 +81,11 @@ const ProjectCard = ({
         >
           ProjectName
         </h2>
+        <div className="flex space-x-2">
+          <div className="badge badge-secondary">TypeScript</div>
+          <div className="badge badge-secondary">Tailwind CSS</div>
+          <div className="badge badge-secondary">React.js</div>
+        </div>
         <p
           className="text-lg"
           ref={textRef}

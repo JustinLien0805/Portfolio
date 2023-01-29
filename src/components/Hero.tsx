@@ -3,13 +3,13 @@ const Hero = () => {
   return (
     <Tilt
       className="flex flex-col items-start justify-center h-[100vh] lg:w-[50vw] sm:w-[80vw] w-screen
-       font-semibold text-7xl md:text-8xl"
+       font-semibold text-6xl md:text-8xl"
       tiltMaxAngleX={10}
       tiltMaxAngleY={10}
     >
       <h1 className="text-6xl">Hello.</h1>
       <h1 className="md:py-2">
-        I&apos;m <span className="text-primary">Justin Lien</span>
+        I&apos;m <span className="text-secondary">Justin Lien</span>
       </h1>
       <h2 className="text-6xl">
         A{" "}

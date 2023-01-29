@@ -1,14 +1,16 @@
 import ProjectCard from "./ProjectCard";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-const Project = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+type projectProps = {
+  scrollRef: React.RefObject<HTMLDivElement>;
+};
+const Project = ({ scrollRef }: projectProps) => {
+  const isInView = useInView(scrollRef, { once: true });
   return (
     <>
       <div
         className="flex flex-col text-6xl text-right font-black italic my-10 md:-mb-20"
-        ref={ref}
+        ref={scrollRef}
         style={{
           transform: isInView ? "none" : "translatex(100px)",
           opacity: isInView ? 1 : 0,
