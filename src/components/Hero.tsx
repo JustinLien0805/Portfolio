@@ -2,8 +2,8 @@ import Tilt from "react-parallax-tilt";
 const Hero = () => {
   return (
     <Tilt
-      className="flex flex-col items-start justify-center h-[100vh] lg:w-[50vw] sm:w-[80vw] w-screen
-       font-semibold text-6xl md:text-8xl"
+      className="flex flex-col items-start justify-center h-[100vh] sm:w-[80vw] w-screen
+       font-semibold text-6xl lg:text-8xl"
       tiltMaxAngleX={10}
       tiltMaxAngleY={10}
     >

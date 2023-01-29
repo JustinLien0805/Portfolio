@@ -24,8 +24,9 @@ export default function Home() {
   ) => {
     if (ref.current) {
       if (sectionName === "project") {
+        console.log(ref.current?.offsetTop);
         window.scrollTo({
-          top: ref.current.offsetTop - 64,
+          top: 784 - 64,
           behavior: "smooth",
         });
       } else {
@@ -43,113 +44,93 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
 
-      <div className="drawer drawer-end">
+      <div
+        className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[18%] overflow-x-hidden"
+        ref={pageRef}
+      >
+        <motion.div
+          style={{ scaleX }}
+          className="fixed h-1 left-0 right-0 bottom-10 bg-primary z-50"
+        />
+        <Hero />
+        {/* Project section */}
+        <Project scrollRef={projectRef} />
+        <About scrollRef={aboutRef} />
+        {/* Contact section */}
+        {/* <Contact /> */}
+      </div>
+
+      {/* <div className="drawer drawer-end">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col overflow-x-hidden">
-          <div className="w-full navbar bg-base-300 z-50 fixed">
-            <div className="flex-1 px-2 mx-2 text-3xl text-secondary font-black italic">
-              JL
-            </div>
-            <div className="flex-none lg:hidden">
-              <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block w-6 h-6 stroke-current"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  ></path>
-                </svg>
-              </label>
-            </div>
-            <div className="flex-none hidden lg:block">
-              <ul className="menu menu-horizontal">
-                {/* <!-- Navbar menu content here --> */}
-                <li
-                  onClick={() => {
-                    handleClick(projectRef, "project");
-                  }}
-                >
-                  <a className="rounded">Project</a>
-                </li>
-                <li
-                  onClick={() => {
-                    handleClick(contactRef, "contact");
-                  }}
-                >
-                  <a className="rounded">Contact</a>
-                </li>
-                <li
-                  onClick={() => {
-                    handleClick(aboutRef, "about");
-                  }}
-                >
-                  <a className="rounded">About</a>
-                </li>
-                <li>
-                  <button className="rounded text-secondary">
-                    Resume
-                    <AiOutlineDownload className="w-full h-full" />
-                  </button>
-                </li>
-              </ul>
-            </div>
+          <div className="flex-none hidden lg:block">
+            <ul className="menu menu-horizontal">
+              
+              <li
+                onClick={() => {
+                  handleClick(projectRef, "project");
+                }}
+              >
+                <a className="rounded">Project</a>
+              </li>
+              <li
+                onClick={() => {
+                  handleClick(contactRef, "contact");
+                }}
+              >
+                <a className="rounded">Contact</a>
+              </li>
+              <li
+                onClick={() => {
+                  handleClick(aboutRef, "about");
+                }}
+              >
+                <a className="rounded">About</a>
+              </li>
+              <li>
+                <button className="rounded text-secondary">
+                  Resume
+                  <AiOutlineDownload className="w-full h-full" />
+                </button>
+              </li>
+            </ul>
           </div>
-          <div
-            className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[18%] overflow-x-hidden -mt-16"
-            ref={pageRef}
-          >
-            <motion.div
-              style={{ scaleX }}
-              className="fixed h-1 left-0 right-0 bottom-10 bg-primary z-50"
-            />
-            <Hero />
-            {/* Project section */}
-            <Project scrollRef={projectRef} />
-            <About scrollRef={aboutRef} />
-            {/* Contact section */}
-            {/* <Contact /> */}
-          </div>
-        </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 bg-[#171717]">
-            <li
-              onClick={() => {
-                handleClick(projectRef, "project");
-              }}
-            >
-              <a className="rounded">Project</a>
-            </li>
-            <li
-              onClick={() => {
-                handleClick(contactRef, "contact");
-              }}
-            >
-              <a className="rounded">Contact</a>
-            </li>
-            <li
-              onClick={() => {
-                handleClick(aboutRef, "about");
-              }}
-            >
-              <a className="rounded">About</a>
-            </li>
-            <li>
-              <a className="rounded bg-secondary">
-                <AiOutlineDownload className="inline-block mr-2" />
-                Resume
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
+        <ul className="menu p-4 w-80 bg-[#171717]">
+          <li
+            onClick={() => {
+              handleClick(projectRef, "project");
+            }}
+          >
+            <a className="rounded">Project</a>
+          </li>
+          <li
+            onClick={() => {
+              handleClick(contactRef, "contact");
+            }}
+          >
+            <a className="rounded">Contact</a>
+          </li>
+          <li
+            onClick={() => {
+              handleClick(aboutRef, "about");
+            }}
+          >
+            <a className="rounded">About</a>
+          </li>
+          <li>
+            <a className="rounded text-secondary">
+              <AiOutlineDownload />
+              Resume
+            </a>
+          </li>
+        </ul>
+      </div> */}
     </>
   );
 }
