@@ -1,5 +1,4 @@
 import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 type aboutProps = {
   scrollRef: React.RefObject<HTMLDivElement>;
@@ -31,13 +30,16 @@ const About = ({ scrollRef }: aboutProps) => {
           transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
         }}
       >
-        <span className="w-full text-3xl font-bold md:text-4xl">Nice to meet you!</span>
+        <span className="w-full text-3xl font-bold md:text-4xl">
+          Nice to meet you!
+        </span>
         <span className="w-full">I&apos;m Justin.</span>
         <span className="w-full">
           I&apos;m a passionate web developer based in Taipei, Taiwan.
         </span>
         <span className="w-full">
-          Love building and creating new projects.
+          Specialized in frontend development and love building and creating new
+          projects.
         </span>
         {/* <span className="w-full">
           I am always striving to build new things and looking for new

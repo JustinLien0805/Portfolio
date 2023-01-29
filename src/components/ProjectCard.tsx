@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Image from "next/image";
+
 import {
   motion,
   useScroll,
@@ -15,21 +15,25 @@ function useParallax(value: MotionValue<number>, distance: number) {
 type PrjectCardProps = {
   projectTitle: string;
   position: string;
+  description: string;
   number: string;
   imgUrl: string;
-  websiteUrl: string;
+  websiteUrl?: string;
   sourceCodeUrl: string;
   tools: string[];
+  object_cover?: boolean;
 };
 
 const ProjectCard = ({
   position = "left",
   projectTitle,
+  description,
   number,
   imgUrl,
   websiteUrl,
   sourceCodeUrl,
   tools,
+  object_cover = true,
 }: PrjectCardProps) => {
   const ref = useRef(null);
 
@@ -52,13 +56,15 @@ const ProjectCard = ({
         className="flex w-full cursor-pointer"
         rel="noreferrer"
         ref={ref}
-        href={websiteUrl}
+        href={websiteUrl || sourceCodeUrl}
         target="_blank"
       >
         <img
           src={imgUrl}
           alt="ProjectImage"
-          className="rounded-lg aspect-video object-cover w-full"
+          className={`rounded-lg aspect-video ${
+            object_cover ? "object-cover" : "object-contain"
+          } w-full`}
         />
       </a>
       <motion.h2
@@ -84,8 +90,11 @@ const ProjectCard = ({
           {projectTitle}
         </h2>
         <div className="grid grid-flow-row sm:grid-cols-3 grid-cols-2 gap-2">
-          {tools.map((tool) => (
-            <div className="badge badge-outline badge-secondary w-full badge-lg">
+          {tools.map((tool, index) => (
+            <div
+              key={index}
+              className="badge badge-outline badge-secondary w-full badge-lg"
+            >
               {tool}
             </div>
           ))}
@@ -99,17 +108,18 @@ const ProjectCard = ({
             transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
           }}
         >
-          Our website allows users to easily upload their YouTube watch history
-          and receive a detailed yearly report on their viewing habits.
+          {description}
         </p>
         <div className="flex space-x-2">
+          {websiteUrl && (
+            <button className="flex-1 btn btn-secondary">
+              <a href={websiteUrl} target="_blank" rel="noreferrer">
+                Live Demo
+              </a>
+            </button>
+          )}
           <button className="flex-1 btn btn-secondary">
-            <a href={websiteUrl} target="_blank" rel="noopener">
-              Live Demo
-            </a>
-          </button>
-          <button className="flex-1 btn btn-secondary">
-            <a href={sourceCodeUrl} target="_blank" rel="noopener">
+            <a href={sourceCodeUrl} target="_blank" rel="noreferrer">
               Source Code
             </a>
           </button>
