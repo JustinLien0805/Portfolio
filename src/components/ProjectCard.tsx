@@ -100,7 +100,7 @@ const ProjectCard = ({
           ))}
         </div>
         <p
-          className="text-lg tracking-wider"
+          className="text-lg tracking-wider font-semibold"
           ref={textRef}
           style={{
             transform: isInView ? "none" : "translatex(100px)",

@@ -41,10 +41,6 @@ const About = ({ scrollRef }: aboutProps) => {
           Specialized in frontend development and love building and creating new
           projects.
         </span>
-        {/* <span className="w-full">
-          I am always striving to build new things and looking for new
-          opportunities to learn and grow.
-        </span> */}
       </p>
     </div>
   );

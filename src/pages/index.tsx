@@ -60,7 +60,7 @@ export default function Home() {
         <Hero />
         <Project scrollRef={projectRef} />
         <About scrollRef={aboutRef} />
-        {/* <Contact /> */}
+        <Contact />
       </div>
     </>
   );
