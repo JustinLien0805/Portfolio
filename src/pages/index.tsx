@@ -44,12 +44,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
 
       <div
         className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[18%] overflow-x-hidden"
         ref={pageRef}
       >
+        <div className="navbar bg-black fixed top-0 left-0 z-50 px-4 sm:px-16 lg:px-28 2xl:px-[18%]">
+          <div className="flex-1 text-secondary">
+            <a
+              className="btn btn-ghost normal-case text-3xl p-0"
+              onClick={() => {
+                // scrollToTop
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }}
+            >
+              J<span className="text-primary">L</span>
+            </a>
+          </div>
+          <div className="flex-none">
+            <button className="btn btn-secondary btn-outline gap-2">
+              Resume
+              <AiOutlineDownload className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
         <motion.div
           style={{ scaleX }}
           className="fixed h-1 left-0 right-0 bottom-10 bg-primary z-50"
