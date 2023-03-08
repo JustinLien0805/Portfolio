@@ -28,6 +28,77 @@ export default function Home() {
       <div className="min-h-screen w-screen px-4 sm:px-16 lg:px-28 2xl:px-[18%] overflow-x-hidden">
         <div className="navbar bg-black fixed top-0 left-0 z-50 px-4 sm:px-16 lg:px-28 2xl:px-[18%]">
           <div className="flex-1 text-secondary">
+            <div className="dropdown">
+              <label tabIndex={0} className="btn btn-ghost md:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#242424] rounded-box w-52"
+              >
+                <li>
+                  <a
+                    className="text-xl"
+                    onClick={() => {
+                      // scrollToProject
+                      if (projectRef.current) {
+                        window.scrollTo({
+                          top: projectRef.current?.offsetTop - 100,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                  >
+                    Project
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-xl"
+                    onClick={() => {
+                      // scrollToProject
+                      if (aboutRef.current) {
+                        window.scrollTo({
+                          top: aboutRef.current?.offsetTop - 350,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-xl"
+                    onClick={() => {
+                      // scrollToProject
+                      if (contactRef.current) {
+                        window.scrollTo({
+                          top: contactRef.current?.offsetTop - 100,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
             <a
               className="btn btn-ghost normal-case text-3xl p-0"
               onClick={() => {
@@ -40,6 +111,56 @@ export default function Home() {
             >
               J<span className="text-primary">L</span>
             </a>
+            <ul className="menu menu-horizontal px-1 hidden md:flex">
+              <li>
+                <a
+                  className="text-xl"
+                  onClick={() => {
+                    // scrollToProject
+                    if (projectRef.current) {
+                      window.scrollTo({
+                        top: projectRef.current?.offsetTop - 100,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                >
+                  Project
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-xl"
+                  onClick={() => {
+                    // scrollToProject
+                    if (aboutRef.current) {
+                      window.scrollTo({
+                        top: aboutRef.current?.offsetTop - 300,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                >
+                  About
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-xl"
+                  onClick={() => {
+                    // scrollToProject
+                    if (contactRef.current) {
+                      window.scrollTo({
+                        top: contactRef.current?.offsetTop - 100,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="flex-none">
             <a
@@ -60,7 +181,7 @@ export default function Home() {
         <Hero />
         <Project scrollRef={projectRef} />
         <About scrollRef={aboutRef} />
-        <Contact />
+        <Contact scrollRef={contactRef} />
       </div>
     </>
   );

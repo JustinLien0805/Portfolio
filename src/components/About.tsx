@@ -20,7 +20,6 @@ const About = ({ scrollRef }: aboutProps) => {
         <h2 className="pr-1 md:pr-1">ABOUT ME</h2>
         <h2 className="font-outline2 pr-1 md:pl-1">ABOUT ME</h2>
       </div>
-
       <p
         className="flex flex-col space-y-2 md:text-2xl text-xl font-semibold text-left tracking-wider sm:w-4/5 w-full"
         ref={scrollRef}

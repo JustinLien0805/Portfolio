@@ -2,17 +2,18 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { AiFillGithub, AiFillMail } from "react-icons/ai";
 import { useCopyToClipboard } from "usehooks-ts";
-
-const Contact = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+type contactProps = {
+  scrollRef: React.RefObject<HTMLDivElement>;
+};
+const Contact = ({ scrollRef }: contactProps) => {
+  const isInView = useInView(scrollRef, { once: true });
   const [value, copy] = useCopyToClipboard();
 
   return (
     <div className="flex flex-col justify-center items-center md:flex-row-reverse  h-[100vh] sm:h-[80vh]">
       <div
         className="flex flex-col text-6xl w-full text-right font-black italic mb-10"
-        ref={ref}
+        ref={scrollRef}
         style={{
           transform: isInView ? "none" : "translatex(100px)",
           opacity: isInView ? 1 : 0,
@@ -24,8 +25,8 @@ const Contact = () => {
         <h2 className="font-outline pr-1">CONTACT</h2>
       </div>
       <div
-        className="flex flex-col  text-left text-6xl space-y-4"
-        ref={ref}
+        className="flex flex-col text-left text-6xl space-y-4 w-full"
+        ref={scrollRef}
         style={{
           transform: isInView ? "none" : "translatex(100px)",
           opacity: isInView ? 1 : 0,
