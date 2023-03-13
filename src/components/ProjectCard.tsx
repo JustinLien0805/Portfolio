@@ -62,7 +62,7 @@ const ProjectCard = ({
         <img
           src={imgUrl}
           alt="ProjectImage"
-          className={`rounded-lg aspect-video ${
+          className={`rounded-lg  ${
             object_cover ? "object-cover" : "object-contain"
           } w-full`}
         />
