@@ -36,15 +36,22 @@ const Project = ({ scrollRef }: projectProps) => {
         <ProjectCard
           position="right"
           number="02"
-          projectTitle="Facial Paralysis Solver"
-          description="Helps facial paralysis patients improve their facial expressions through a website built with React that uses a webcam to capture user's picture and generate 16 different facial expressions with an AI model in a Python Flask backend."
-          imgUrl="https://firebasestorage.googleapis.com/v0/b/react-image-a92d3.appspot.com/o/portfolio%20image%2Fmockup2.png?alt=media&token=8c148c40-79aa-4f5a-8f7e-745db3f6eb12"
-          sourceCodeUrl="https://github.com/JustinLien0805/Facial_paralysis_solver"
-          tools={["Python", "Flask", "OpenCV", "OpenVINO", "React"]}
-          object_cover={false}
+          projectTitle="Github Issue Manager"
+          description="A web application that allows users to manage their GitHub issues. Users can edit, delete, and search for issues."
+          imgUrl="https://firebasestorage.googleapis.com/v0/b/react-image-a92d3.appspot.com/o/portfolio%20image%2Fmockup5.png?alt=media&token=757b122d-76fb-47b6-9d11-3df40e4fe5d0"
+          websiteUrl="https://github-task-manager.vercel.app/"
+          sourceCodeUrl="https://github.com/JustinLien0805/github_task"
+          tools={[
+            "Next.js",
+            "Tailwind CSS",
+            "TypeScript",
+            "GitHubAPI",
+            "React Query",
+          ]}
         />
+
         <ProjectCard
-          position="right"
+          position="left"
           number="03"
           projectTitle="NCCU Restaurant Order System"
           description="Allows users to order food for the next day, and users can like or dislike dishes in a Tinder-like interface by swiping the card."
@@ -54,7 +61,7 @@ const Project = ({ scrollRef }: projectProps) => {
           tools={["Next.js", "Tailwind CSS", "prisma", "MySQL", "Firebase"]}
         />
         <ProjectCard
-          position="left"
+          position="right"
           number="04"
           projectTitle="NCCU Restaurant Dashboard"
           description="Allows employees to manage and use data from the ordering system and perform data analysis."
@@ -62,6 +69,16 @@ const Project = ({ scrollRef }: projectProps) => {
           websiteUrl="https://nccu-dashboard.vercel.app//"
           sourceCodeUrl="https://github.com/JustinLien0805/nccu-dashboard"
           tools={["Next.js", "Tailwind CSS", "ReCharts", "prisma", "MySQL"]}
+        />
+        <ProjectCard
+          position="left"
+          number="05"
+          projectTitle="Facial Paralysis Solver"
+          description="Helps facial paralysis patients improve their facial expressions through a website built with React that uses a webcam to capture user's picture and generate 16 different facial expressions with an AI model in a Python Flask backend."
+          imgUrl="https://firebasestorage.googleapis.com/v0/b/react-image-a92d3.appspot.com/o/portfolio%20image%2Fmockup2.png?alt=media&token=8c148c40-79aa-4f5a-8f7e-745db3f6eb12"
+          sourceCodeUrl="https://github.com/JustinLien0805/Facial_paralysis_solver"
+          tools={["Python", "Flask", "OpenCV", "OpenVINO", "React"]}
+          object_cover={false}
         />
       </div>
     </>

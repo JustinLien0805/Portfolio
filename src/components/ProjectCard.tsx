@@ -14,7 +14,7 @@ function useParallax(value: MotionValue<number>, distance: number) {
 
 type PrjectCardProps = {
   projectTitle: string;
-  position: string;
+  position: "right" | "left";
   description: string;
   number: string;
   imgUrl: string;
