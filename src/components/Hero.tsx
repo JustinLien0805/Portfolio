@@ -1,4 +1,6 @@
 import Tilt from "react-parallax-tilt";
+import { AiFillGithub, AiFillMail } from "react-icons/ai";
+
 const Hero = () => {
   return (
     <Tilt
@@ -17,6 +19,14 @@ const Hero = () => {
           Web Developer
         </span>
       </h2>
+      <div className="flex items-center space-x-4 pt-4">
+        <a target="_blank" href="https://github.com/JustinLien0805">
+          <AiFillGithub className="h-12 w-12" />
+        </a>
+        <a  href="mailto:justinlien0805@gmail.com">
+          <AiFillMail className="h-12 w-12" />
+        </a>
+      </div>
     </Tilt>
   );
 };
