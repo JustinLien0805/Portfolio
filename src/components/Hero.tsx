@@ -20,7 +20,7 @@ const Hero = () => {
         </span>
       </h2>
       <div className="flex items-center space-x-4 pt-4">
-        <a target="_blank" href="https://github.com/JustinLien0805">
+        <a target="_blank" rel="noreferrer" href="https://github.com/JustinLien0805">
           <AiFillGithub className="h-12 w-12" />
         </a>
         <a  href="mailto:justinlien0805@gmail.com">
